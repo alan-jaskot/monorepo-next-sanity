@@ -2,13 +2,27 @@
   "name": "next-monorepo",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx run-many --target=build",
+    "dev:web": "nx serve web",
+    "dev:web-2": "nx serve web-2",
+    "graph": "nx graph"
+  },
   "private": true,
   "dependencies": {
     "@nrwl/next": "15.8.5",
+    "@sanity/cli": "^3.5.1",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/ui": "^1.3.0",
+    "@sanity/vision": "^3.5.1",
+    "core-js": "^3.6.5",
     "next": "13.1.1",
+    "next-sanity": "^4.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "regenerator-runtime": "0.13.7",
+    "sanity": "^3.5.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -20,6 +34,7 @@
     "@nrwl/linter": "15.8.5",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/react": "15.8.5",
+    "@nrwl/web": "15.8.5",
     "@nrwl/workspace": "15.8.5",
     "@testing-library/react": "14.0.0",
     "@types/jest": "^29.4.0",

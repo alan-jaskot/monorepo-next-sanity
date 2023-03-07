@@ -1,7 +1,7 @@
 {
-  "name": "web",
+  "name": "web-2",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/web",
+  "sourceRoot": "apps/web-2",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,12 +9,12 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/web",
-        "outputPath": "dist/apps/web"
+        "root": "apps/web-2",
+        "outputPath": "dist/apps/web-2"
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/web"
+          "outputPath": "apps/web-2"
         },
         "production": {}
       }
@@ -23,17 +23,17 @@
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "web:build",
+        "buildTarget": "web-2:build",
         "dev": true,
-        "port": 3000
+        "port": 3001
       },
       "configurations": {
         "development": {
-          "buildTarget": "web:build:development",
+          "buildTarget": "web-2:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "web:build:production",
+          "buildTarget": "web-2:build:production",
           "dev": false
         }
       }
@@ -41,14 +41,14 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "web:build:production"
+        "buildTarget": "web-2:build:production"
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/web/jest.config.ts",
+        "jestConfig": "apps/web-2/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -62,7 +62,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/web/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/web-2/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
